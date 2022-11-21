@@ -1,0 +1,110 @@
+<robot name="abb_irb1200_7_70">
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+  <material name="gray">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.180 0.306 0.494 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="base_link_x">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="base_link_y">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="base_link_z">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="abb_ee">
+     <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+
+    <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <contact_coefficients mu = "0.5" kp = "1e8" kd = "1e8"/>
+      <lateral_friction value="0.18"/>
+      <geometry>
+        <mesh filename="package://meshes/rod0.stl" />
+      </geometry>
+    </collision>
+
+    <visual name="visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/rod0.stl" />
+      </geometry>
+      <material name ="blue"/>
+    </visual>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_link_x"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <joint name="ee_x" type="prismatic">
+    <parent link="base_link_x"/>
+    <child link="base_link_y"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="0.1"/>
+  </joint>
+
+  <joint name="ee_y" type="prismatic">
+    <parent link="base_link_y"/>
+    <child link="base_link_z"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="0.1"/>
+  </joint>
+
+  <joint name="ee_z" type="prismatic">
+    <parent link="base_link_z"/>
+    <child link="abb_ee"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0"/>
+    <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="0.1"/>
+  </joint>
+
+</robot>

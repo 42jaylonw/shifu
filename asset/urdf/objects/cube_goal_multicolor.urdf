@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot name="object">
+  <link name="object">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/cube_multicolor.obj" scale=".05 .05 .05"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+</robot>

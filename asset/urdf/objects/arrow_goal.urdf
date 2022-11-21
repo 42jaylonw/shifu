@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="arrow_goal">
+  <link name="arrow_goal">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/arrow.obj" scale="1.5 1.5 1.5"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+</robot>
