@@ -51,12 +51,12 @@ Prerequisites for Isaac Gym:
 Train:
 
 ```bash
-PYTHONPATH=. python examples/a1_conditional/a1_conditional.py -r train
+python -m examples.a1_conditional.a1_conditional -r train
 ```
 
 play:
 ```bash
-PYTHONPATH=. python examples/a1_conditional/a1_control_panel.py
+python -m examples.a1_conditional.a1_control_panel
 ```
 
 ### Example 2: Arm Robot with multimodal vision
@@ -70,17 +70,17 @@ PYTHONPATH=. python examples/a1_conditional/a1_control_panel.py
 Train:
 
 ```bash
-PYTHONPATH=. python examples/abb_pushbox_vision/a_prior_stage.py -r train
-PYTHONPATH=. python examples/abb_pushbox_vision/b_regression_stage.py -r train
-PYTHONPATH=. python examples/abb_pushbox_vision/c_vision_stage.py -r train
+python -m examples.abb_pushbox_vision.a_prior_stage -r train
+python -m examples.abb_pushbox_vision.b_regression_stage -r train
+python -m examples.abb_pushbox_vision.c_vision_stage -r train
 ```
 
 Play
 
 ```bash
-PYTHONPATH=. python examples/abb_pushbox_vision/a_prior_stage.py -r play
-PYTHONPATH=. python examples/abb_pushbox_vision/b_regression_stage.py -r play
-PYTHONPATH=. python examples/abb_pushbox_vision/c_vision_stage.py -r play
+python -m examples.abb_pushbox_vision.a_prior_stage -r play
+python -m examples.abb_pushbox_vision.b_regression_stage -r play
+python -m examples.abb_pushbox_vision.c_vision_stage -r play
 ```
 
 ### API
