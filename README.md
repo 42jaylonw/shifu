@@ -8,6 +8,8 @@ enjoy the incredible IsaacGym’s few minutes policy training without complex en
 
 **Maintainer**: Jaylon Wang
 
+**Affiliation**: SenseTime
+
 **Contact**: jwang383@ucsc.edu
 
 中文-[快速入门](https://blog.csdn.net/JaylonW42/article/details/127962458)
